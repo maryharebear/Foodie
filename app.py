@@ -1,7 +1,9 @@
 from flask import Flask
 from flasgger import Swagger
+from flask.ext.scss import Scss
 def create_app():
     app = Flask(__name__)
+    Scss(app, static_dir='static/css', asset_dir='assets/scss')
     app.config['SWAGGER'] = {
         'title': 'Foodie',
     }
