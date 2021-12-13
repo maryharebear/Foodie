@@ -1,9 +1,14 @@
 from flask import Flask
 from flasgger import Swagger
 from flask.ext.scss import Scss
+
+from api.routes import home_api
+
+
 def create_app():
     app = Flask(__name__)
     Scss(app, static_dir='static/css', asset_dir='assets/scss')
+
     app.config['SWAGGER'] = {
         'title': 'Foodie',
     }
@@ -11,6 +16,8 @@ def create_app():
 
     # Initialize Config
     app.config.from_pyfile('config.py')
+    app.register_blueprint(home_api, url_prefix='/')
+
     return app
 
 
