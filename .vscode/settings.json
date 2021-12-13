@@ -1,5 +1,11 @@
 {
     "cSpell.words": [
-        "pipenv"
-    ]
+        "bcrypt",
+        "checkpw",
+        "flasgger",
+        "pipenv",
+        "pyfile"
+    ],
+    "python.linting.enabled": true,
+	"python.languageServer": "Default"
 }
